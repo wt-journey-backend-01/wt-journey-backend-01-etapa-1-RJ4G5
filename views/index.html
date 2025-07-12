@@ -1,12 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevBurger</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBurger</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/favicon-32x32.png" type="image/x-icon">
+
 </head>
+
 <body>
-    
+  <div class="main ">
+    <div class="main-header">
+      <div class="logo-container">
+        <img src="/images/devburger_logo.png" alt="DevBurger Logo" class="logo">
+        <h1>Bem-vindo ao DevBurger!</h1>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/contato">Contato</a></li>
+         <!--<li><a href="/api/lanches">Ver lanches</a></li> --> 
+
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-body">
+      <h2>Conheça nossos lanches!</h2>
+      <p>Explore nosso cardápio e descubra os melhores lanches da cidade.</p>
+      <div class="burger-list">
+        <ul>
+          <!-- modelo de item de lanche 
+          <li>
+
+            <div class="burger-imagem">
+              <img src="/images/burger-imagem.jpg" alt="Burger 1">
+            </div>
+            <div class="burger-detalhes">
+              <h3>Hambúrguer Clássico</h3>
+              <p>Um delicioso hambúrguer com carne suculenta, queijo, alface e tomate.</p>
+            </div>
+          </li>
+          -->
+
+        
+
+        </ul>
+      </div>
+
+
+    </div>
+    <div class="main-footer">
+      <div class="sugestao-header">
+        <h2>Faça sua sugestão de lanche!</h2>
+
+        <p> 
+          <i>Preencha o formulário ao lado com o nome do lanche e os ingredientes separados por vírgula que você
+            gostaria de ver no nosso cardápio.
+          </i>
+        </p>
+
+      </div>
+
+      <form action="/sugestao" method="get">
+        <label for="nome">Nome do lanche:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="ingredientes">Ingredientes:</label>
+        <textarea id="ingredientes" name="ingredientes" required></textarea>
+
+        <button type="submit">Enviar sugestão</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+
+  async function carregarLanches() {
+    try {
+      const response = await fetch('/api/lanches');
+      const lanches = await response.json();
+
+      const burgerList = document.querySelector('.burger-list ul');
+      burgerList.innerHTML = ''; 
+
+      lanches.forEach(lanche => {
+        const li = document.createElement('li');
+
+        li.innerHTML = `
+          <div class="burger-imagem">
+            <img src="/images/burger-imagem.jpg" alt="Imagem do ${lanche.nome}">
+          </div>
+          <div class="burger-detalhes">
+            <h3>${lanche.nome}</h3>
+            <p>${lanche.ingredientes}</p>
+          </div>
+        `;
+
+        burgerList.appendChild(li);
+      });
+    } catch (error) {
+      console.error('Erro ao carregar os lanches:', error);
+    }
+  }
+
+
+  document.addEventListener('DOMContentLoaded', carregarLanches);
+  </script>
+
+
+
+
 </body>
+
 </html>

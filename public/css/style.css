@@ -1,0 +1,207 @@
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: italic; 
+}
+
+
+* {
+  font-family: "Nunito", arial;
+}
+
+
+/*  
+estilização da pagina inicial
+*/
+.main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+
+  border-radius: 10px;
+  justify-content: center;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 10px 20px;
+}
+.main .main-header {
+  display: flex;
+  flex-direction: column;
+}
+.main .main-body {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+}
+.main .main-body h2 {
+  font-size: 1.5rem;
+  color: #391400;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.main .main-body > p {
+  font-size: 1rem;
+  color: #391400;
+  margin: 0;
+}
+.main .main-body .burger-list {
+  height: 200px;
+  overflow-y: scroll;
+}
+.main .main-body .burger-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main .main-body .burger-list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.main .main-body .burger-list ul li .burger-imagem img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+.main .main-body .burger-list ul li .burger-detalhes {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 9px;
+}
+.burger-detalhes h3,
+.burger-detalhes p {
+  font-size: 1.2rem;
+  color: #391400;
+  margin: 0;
+}
+.main .main-header .logo-container {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+}
+.main .main-header .logo-container h1 {
+  font-size: 2.5rem;
+  color: #391400;
+  text-align: center;
+  margin: 2px 0;
+}
+.main .main-header .logo-container img {
+  width: 100px;
+}
+.main .main-header nav {
+}
+.main .main-header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  gap: 22px;
+}
+.main .main-header nav ul li a {
+  text-decoration: none;
+  color: #b84518;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Nunito", sans-serif;
+}
+.main-footer h2,
+.main-footer p {
+  font-size: 1.2rem;
+  color: #391400;
+  margin: 0;
+}
+.main-footer p {
+  font-size: 1.0rem;
+
+}
+
+.main-footer{
+    display: flex;
+    flex-direction: row;
+   
+    padding: 20px;
+   
+    border-top: 1px solid #ccc;
+}
+
+.main-footer form{
+      display: flex
+;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+    width: 200px;
+}
+.main-footer form input,
+.main-footer form textarea {    
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #391400;
+    resize: none;
+}
+.main-footer form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #b84518;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*  
+fim estilização da pagina inicial
+*/
+
+
+/*  
+ estilização da pagina de contato   
+*/
+.contato .main-body h1{
+  font-size: 2rem;
+  color: #391400;
+  text-align: center;
+  margin-top: 20px;
+}
+.contato .main-body form {
+  display: flex;
+  flex-direction: column; 
+  padding: 20px;
+  gap: 10px;
+}
+.contato .main-body form input,
+.contato .main-body form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #391400;
+    resize: none;
+}
+.contato .main-body form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #b84518;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
